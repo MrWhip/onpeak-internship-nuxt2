@@ -1,0 +1,217 @@
+<template>
+  <header>
+    <div class="header">
+      <div class="header__firstLine">
+        <div class="header__firstLineWrapper">
+          <div class="header__firstLineText">
+            Доставка в любой город России всего 700 рублей. По Москве — 500
+            рублей.
+          </div>
+          <div class="header__firstLineMailWrapper">
+            <div class="header__firstLineMail">
+              <img class="header__firstLineMailSvg" :src="require('@/assets/sprite/svg/mail.svg')"/>
+            </div>
+            <div class="header__firstLineMailText">welcome@re-space.ru</div>
+          </div>
+          <div class="header__firstLinePhoneWrapper">
+            <div class="header__firstLinePhone">
+              <img class="header__firstLineMailSvg" :src="require('@/assets/sprite/svg/phone.svg')"/>
+            </div>
+            <div class="header__firstLinePhoneNumber">8 800 350 84 15</div>
+          </div>
+        </div>
+      </div>
+      <div class="header__secondLine">
+        <div class="header__secondLineWrapper">
+          <div class="header__secondLineLogo">
+            <img :src="require('@/assets/images/respace-logo.png')" alt="" />
+          </div>
+          <div class="header__secondLineLinksWrapper">
+            <div class="header__secondLineLink">Обои</div>
+            <div class="header__secondLineLink">Плитка</div>
+            <div class="header__secondLineLink">Краски</div>
+            <div class="header__secondLineLink">О компании</div>
+            <div class="header__secondLineLink header__secondLineLink_last">
+              Контакты
+            </div>
+          </div>
+          <div class="header__secondLineDividingLine"></div>
+          <div class="header__secondLineSearch">
+            <img class="header__secondLineSearchSvg" :src="require('@/assets/sprite/svg/search.svg')"/>
+          </div>
+          <div class="header__secondLineLike">
+            <img class="header__secondLineLikeSvg" :src="require('@/assets/sprite/svg/Like.svg')"/>
+          </div>
+          <div class="header__secondLineShoppingCart">
+            <img class="header__secondLineShoppingCartSvg" :src="require('@/assets/sprite/svg/shopping-cart.svg')"/>
+            <div class="header__secondLineShoppingCartQuantity_active"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+.header__firstLine {
+  height: 40px;
+
+  background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.header__firstLineWrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0 260px 0 260px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.header__firstLineText {
+  height: 15px;
+  margin: 13px 593px 12px 0;
+  width: 468px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+
+  color: #ffffff;
+}
+
+.header__firstLineMailWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__firstLinePhoneWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__firstLineMailSvg {
+  display: flex;
+  height: 15px;
+  width: 15px;
+  margin: 13px 6px 12px 0;
+  border-radius: 0px;
+}
+
+.header__firstLineMailText {
+  margin: 8px 45px 8px 0;
+  width: 144px;
+  height: 24px;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.header__firstLinePhoneSvg {
+  display: flex;
+  width: 15px;
+  height: 15px;
+
+  margin: 12px 8px 13px 0;
+}
+
+.header__secondLineDividingLine { 
+  margin: 22px 18px 22px 0;
+  height: 36px;
+
+  border: 1px solid #CA3192;
+}
+
+.header__firstLinePhoneNumber {
+  margin: 8px 0 8px 0;
+  height: 24px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.header__secondLineWrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 260px 0 250px;
+}
+
+.header__secondLineLogo {
+  margin: 18px 148px 18px 0;
+}
+
+.header__secondLineLinksWrapper {
+  width: 574px;
+  margin: 0 133px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__secondLineShoppingCart {
+  position: relative;
+}
+
+.header__secondLineShoppingCartQuantity_active {
+  border-radius: 100px;
+  position: relative;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+
+  background-color: #CA3192;
+}
+
+.header__secondLineShoppingCartQuantity_disable {
+  display: none;
+}
+
+.header__secondLineLink {
+  display: flex;
+  align-items: center;
+  margin: 0 65px 0 0;
+  height: 19px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #4e3535;
+}
+
+.header__secondLineSearch {
+  margin: 30px 80px 30px 0;
+}
+
+.header__secondLineLikeSvg {
+  margin: 31px 29px 31px 0;
+}
+
+.header__secondLineLink_last {
+  margin: 0;
+}
+
+.header__secondLineShoppingCartSvg {
+  position: relative;
+}
+
+
+</style>

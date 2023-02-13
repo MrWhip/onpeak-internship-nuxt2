@@ -1,4 +1,4 @@
-# newyear
+# onpeak-internship-nuxt2
 
 ## Build Setup
 

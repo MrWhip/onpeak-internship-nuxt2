@@ -44,7 +44,7 @@
           </div>
           <div class="header__secondLineShoppingCart">
             <img class="header__secondLineShoppingCartSvg" :src="require('@/assets/sprite/svg/shopping-cart.svg')"/>
-            <div class="header__secondLineShoppingCartQuantity_active"></div>
+            <div class="header__secondLineShoppingCartQuantity_disable"></div>
           </div>
         </div>
       </div>
@@ -166,10 +166,14 @@ export default {};
 }
 
 .header__secondLineShoppingCart {
+  display: flex;
   position: relative;
+  height: 28px;
+  width: 28px;
 }
 
 .header__secondLineShoppingCartQuantity_active {
+  display: flex;
   border-radius: 100px;
   position: relative;
   z-index: 1;
@@ -210,6 +214,7 @@ export default {};
 }
 
 .header__secondLineShoppingCartSvg {
+  display: flex;
   position: relative;
 }
 

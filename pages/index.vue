@@ -10,8 +10,6 @@
         />
       </div>
     </div>
-    <NuxtLink to="/twst">АБОБА</NuxtLink>
-    <FirstVue />
     <TheFooter />
   </div>
 </template>

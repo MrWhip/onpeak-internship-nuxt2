@@ -16,7 +16,7 @@
             <div class="footer__firstBlockColumnDescriptionText">Классика</div>
             <div class="footer__firstBlockColumnDescriptionText">Раскраски</div>
             <div class="footer__firstBlockColumnDescriptionText">Природа</div>
-            <div class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_last">
+            <div class="footer__firstBlockColumnDescriptionText">
               Простые формы
             </div>
           </div>
@@ -58,7 +58,12 @@
             <div class="footer__firstBlockColumnDescriptionText">Горы</div>
             <div class="footer__firstBlockColumnDescriptionText">Классика</div>
             <div class="footer__firstBlockColumnDescriptionText">Модерн</div>
-            <div class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_beforeTitle">
+            <div
+              class="
+                footer__firstBlockColumnDescriptionText
+                footer__firstBlockColumnDescriptionText_beforeTitle
+              "
+            >
               Геометрия
             </div>
           </div>
@@ -92,7 +97,12 @@
             <div class="footer__firstBlockColumnDescriptionText">Контакты</div>
             <div class="footer__firstBlockColumnDescriptionText">Портфолио</div>
             <div class="footer__firstBlockColumnDescriptionText">
-              <a class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_link" href="#"
+              <a
+                class="
+                  footer__firstBlockColumnDescriptionText
+                  footer__firstBlockColumnDescriptionText_link
+                "
+                href="#"
                 >Корпоративным клиентам</a
               >
             </div>
@@ -101,56 +111,112 @@
         <div class="footer__firstBlockColumn_last">
           <div class="footer__firstBlockColumnTitle">Контакты</div>
           <div class="footer__firstBlockColumnContacts">
-            <div class="footer__firstBlockColumnPhone">
-              <svg-icon class="footer__firstBlockColumnPhoneSvg" name="phone" />
-              <div class="footer__firstBlockColumnPhoneNumber">
+            <div class="footer__firstBlockColumnContactItem">
+              <img
+                class="footer__firstBlockColumnContactItemSvg"
+                fill="#CA3192"
+                :src="require('@/assets/sprite/svg/phone.svg')"
+              />
+              <div class="footer__firstBlockColumnContactItemText">
                 8 800 350 84 15
               </div>
             </div>
-            <div class="footer__firstBlockColumnMail">
-              <svg-icon class="footer__firstBlockColumnMailSvg" name="mail" />
-              <div class="footer__firstBlockColumnMailText">
+            <div class="footer__firstBlockColumnContactItem">
+              <img
+                class="footer__firstBlockColumnContactItemSvg"
+                :src="require('@/assets/sprite/svg/mail.svg')"
+              />
+              <div class="footer__firstBlockColumnContactItemText">
                 welcome@re-space.ru
               </div>
             </div>
           </div>
           <div class="footer__firstBlockColumnUnderline"></div>
           <div class="footer__firstBlockColumnSocial">
-            <div class="footer__firstBlockColumnSocialLink"></div>
-            <div class="footer__firstBlockColumnSocialLink"></div>
-            <div class="footer__firstBlockColumnSocialLink"></div>
-            <div class="footer__firstBlockColumnSocialLink"></div>
-            <div class="footer__firstBlockColumnSocialLink footer__firstBlockColumnSocialLink_last"></div>
+            <a href="#" class="footer__firstBlockColumnSocialLink">
+              <img
+                class="footer__firstBlockColumnSocialLinkSvg"
+                :src="require('@/assets/sprite/svg/instagram_link.svg')"
+              />
+            </a>
+            <a href="#" class="footer__firstBlockColumnSocialLink">
+              <img
+                class="footer__firstBlockColumnSocialLinkSvg"
+                :src="require('@/assets/sprite/svg/facebook.svg')"
+              />
+            </a>
+            <a href="#" class="footer__firstBlockColumnSocialLink">
+              <img
+                class="footer__firstBlockColumnSocialLinkSvg"
+                :src="require('@/assets/sprite/svg/twitter.svg')"
+              />
+            </a>
+            <a href="#" class="footer__firstBlockColumnSocialLink">
+              <img
+                class="footer__firstBlockColumnSocialLinkSvg"
+                :src="require('@/assets/sprite/svg/pinterest.svg')"
+              />
+            </a>
+            <a href="#" class="footer__firstBlockColumnSocialLink">
+              <img
+                class="footer__firstBlockColumnSocialLinkSvg"
+                :src="require('@/assets/sprite/svg/youtube.svg')"
+              />
+            </a>
           </div>
+          <div class="footer__firstBlockText">
+            Соглашение об использовании сайта
+          </div>
+          <div class="footer__firstBlockText">© Respace 2012-2021</div>
         </div>
       </div>
       <div class="footer__secondBlock">
-        <svg-icon class="footer__secondBlockSvg" name="arrow_up" />
+        <img
+          class="footer__secondBlockSvg"
+          @click="toTop"
+          :src="require('@/assets/sprite/svg/arrow_up.svg')"
+        />
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    toTop: function () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
 .footer__firstBlockColumnDescriptionText {
-  margin: 0 0 17px 0;
-}
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 34px;
 
-.footer__firstBlockColumnDescriptionText_last {
-  margin: 0;
-}
+  color: var(--colorBrown);
 
-.footer__firstBlockColumnDescriptionText_beforeTitle {
-  margin: 0 0 26px 0;
-}
+  &:last-child {
+    margin: 0;
+  }
 
-.footer__firstBlockColumnDescriptionText_link {
-  color: #c64b95;
-  text-decoration: none;
+  &_beforeTitle {
+    margin: 0 0 26px 0;
+  }
+
+  &_link {
+    color: var(--colorMoreContrastThanDullMagenta);
+    text-decoration: none;
+  }
 }
 
 .footer__firstBlock {
@@ -161,64 +227,73 @@ export default {};
 .footer__firstBlockColumn {
   width: 221px;
   margin: 0 15px 0 0;
+
+  &:nth-child(4) {
+    .footer__firstBlockColumnTitle {
+      width: 180px;
+      margin: 0 56px 16px 0;
+    }
+
+    .footer__firstBlockColumnDescription {
+      margin: 0 0 26px 0;
+    }
+  }
 }
 
 .footer__firstBlockColumnTitle {
   width: 221px;
-  margin: 0 0 16px 0;
+  margin: 0 0 21px 0;
 
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  line-height: 24px;
 
-  color: #ca3192;
+  color: var(--colorPink);
+
+  &:last-child {
+    margin: 0 0 22px 0;
+  }
 }
 
 .footer__firstBlockColumnContacts {
   display: grid;
 }
 
-.footer__firstBlockColumnPhone {
+.footer__firstBlockColumnContactItem {
   display: flex;
-
-  width: 190px;
+  align-items: center;
   margin: 0 0 8px 0;
 
-  font-family: "Ubuntu";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-
-  color: #ca3192;
+  &:last-child {
+    margin: 0 0 28px 0;
+  }
 }
 
-.footer__firstBlockColumnPhoneSvg {
+.footer__firstBlockColumnContactItemSvg {
   display: flex;
   width: 15px;
   height: 15px;
   margin: 0 16px 0 0;
+
+  filter: invert(28%) sepia(31%) saturate(3755%) hue-rotate(292deg)
+    brightness(100%) contrast(96%);
 }
 
-.footer__firstBlockColumnMail {
+.footer__firstBlockColumnContactItemText {
   display: flex;
-
+  align-items: center;
   width: 190px;
-  margin: 0 0 28px 0;
+  height: 24px;
 
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  line-height: 60px;
 
-  color: #ca3192;
-}
-
-.footer__firstBlockColumnMailSvg {
-  display: flex;
-  width: 15px;
-  height: 15px;
-  margin: 0 16px 0 0;
+  color: var(--colorPink);
 }
 
 .footer__firstBlockColumnUnderline {
@@ -227,7 +302,7 @@ export default {};
 
   margin: 0 0 25px 0;
 
-  border: 1px solid #ca3192;
+  border: 1px solid var(--colorPink);
 }
 
 .footer__firstBlockColumnSocial {
@@ -238,21 +313,25 @@ export default {};
 }
 
 .footer__firstBlockColumnSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35px;
   height: 35px;
   margin: 0 10px 0 0;
 
   border-radius: 100px;
   background: linear-gradient(90deg, #f880b9 0.29%, #ff98a6 100%);
-}
 
-.footer__firstBlockColumnSocialLink_last {
-  margin: 0;
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .footer__secondBlock {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 60px;
 
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
@@ -262,5 +341,21 @@ export default {};
 .footer__secondBlockSvg {
   height: 30px;
   width: 16px;
+
+  filter: invert(99%) sepia(1%) saturate(2624%) hue-rotate(177deg)
+    brightness(123%) contrast(100%);
+}
+
+.footer__firstBlockText {
+  margin: 0 0 13px 0;
+  width: 205px;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: var(--colorBrown);
 }
 </style>

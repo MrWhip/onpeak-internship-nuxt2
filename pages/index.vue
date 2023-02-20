@@ -1,6 +1,9 @@
 <template>
   <div class="">
     <TheHeader />
+    <Social/>
+    <CeramicTiles/>
+    <IndividualBlock/>
     <div class="cards">
       <div class="card" v-for="card in cards" :key="card.title">
         <Card
@@ -16,6 +19,9 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import IndividualBlock from "@/components/IndividualBlock.vue";
+import Social from "@/components/Social.vue";
+import CeramicTiles from "@/components/CeramicTiles.vue";
 
 export default {
   components: {

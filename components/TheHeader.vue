@@ -9,13 +9,19 @@
           </div>
           <div class="header__firstLineMailWrapper">
             <div class="header__firstLineMail">
-              <img class="header__firstLineMailSvg" :src="require('@/assets/sprite/svg/mail.svg')"/>
+              <img
+                class="header__firstLineMailSvg"
+                :src="require('@/assets/sprite/svg/mail.svg')"
+              />
             </div>
             <div class="header__firstLineMailText">welcome@re-space.ru</div>
           </div>
           <div class="header__firstLinePhoneWrapper">
             <div class="header__firstLinePhone">
-              <img class="header__firstLineMailSvg" :src="require('@/assets/sprite/svg/phone.svg')"/>
+              <img
+                class="header__firstLineMailSvg"
+                :src="require('@/assets/sprite/svg/phone.svg')"
+              />
             </div>
             <div class="header__firstLinePhoneNumber">8 800 350 84 15</div>
           </div>
@@ -31,20 +37,39 @@
             <div class="header__secondLineLink">Плитка</div>
             <div class="header__secondLineLink">Краски</div>
             <div class="header__secondLineLink">О компании</div>
-            <div class="header__secondLineLink header__secondLineLink_last">
-              Контакты
-            </div>
+            <div class="header__secondLineLink">Контакты</div>
           </div>
           <div class="header__secondLineDividingLine"></div>
           <div class="header__secondLineSearch">
-            <img class="header__secondLineSearchSvg" :src="require('@/assets/sprite/svg/search.svg')"/>
+            <img
+              class="header__secondLineSearchSvg"
+              :src="require('@/assets/sprite/svg/search.svg')"
+            />
           </div>
-          <div class="header__secondLineLike">
-            <img class="header__secondLineLikeSvg" :src="require('@/assets/sprite/svg/Like.svg')"/>
-          </div>
-          <div class="header__secondLineShoppingCart">
-            <img class="header__secondLineShoppingCartSvg" :src="require('@/assets/sprite/svg/shopping-cart.svg')"/>
-            <div class="header__secondLineShoppingCartQuantity_disable"></div>
+          <a href="#" class="header__secondLineLike">
+            <img
+              class="header__secondLineLikeSvg"
+              :src="require('@/assets/sprite/svg/Like.svg')"
+            />
+          </a>
+          <a href="#" class="header__secondLineShoppingCart">
+            <img
+              class="header__secondLineShoppingCartSvg"
+              :src="require('@/assets/sprite/svg/shopping-cart.svg')"
+            />
+            <div
+              class="header__secondLineShoppingCartQuantity"
+              v-if="!isCartEmpty"
+            >
+              {{ itemsInCart }}
+            </div>
+          </a>
+          <a href="#" class="header__secondLineMenuText">Меню</a>
+          <div class="header__secondLineMenuImage">
+            <img
+              class="header__secondLineMenuImageSvg"
+              :src="require('@/assets/sprite/svg/menu.svg')"
+            />
           </div>
         </div>
       </div>
@@ -53,10 +78,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      itemsInCart: 0,
+    };
+  },
+
+  computed: {
+    isCartEmpty() {
+      return this.itemsInCart == 0;
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
 .header__firstLine {
   height: 40px;
 
@@ -82,7 +119,7 @@ export default {};
   font-size: 13px;
   line-height: 15px;
 
-  color: #ffffff;
+  color: var(--colorWhite);
 }
 
 .header__firstLineMailWrapper {
@@ -101,6 +138,9 @@ export default {};
   width: 15px;
   margin: 13px 6px 12px 0;
   border-radius: 0px;
+
+  filter: invert(99%) sepia(1%) saturate(2624%) hue-rotate(177deg)
+    brightness(123%) contrast(100%);
 }
 
 .header__firstLineMailText {
@@ -112,10 +152,12 @@ export default {};
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
+  line-height: 60px;
+
   display: flex;
   align-items: center;
 
-  color: #ffffff;
+  color: var(--colorWhite);
 }
 
 .header__firstLinePhoneSvg {
@@ -124,13 +166,16 @@ export default {};
   height: 15px;
 
   margin: 12px 8px 13px 0;
+
+  filter: invert(99%) sepia(1%) saturate(2624%) hue-rotate(177deg)
+    brightness(123%) contrast(100%);
 }
 
-.header__secondLineDividingLine { 
+.header__secondLineDividingLine {
   margin: 22px 18px 22px 0;
   height: 36px;
 
-  border: 1px solid #CA3192;
+  border: 1px solid var(--colorPink);
 }
 
 .header__firstLinePhoneNumber {
@@ -140,11 +185,12 @@ export default {};
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
+  line-height: 60px;
 
   display: flex;
   align-items: center;
 
-  color: #ffffff;
+  color: var(--colorWhite);
 }
 
 .header__secondLineWrapper {
@@ -172,19 +218,26 @@ export default {};
   width: 28px;
 }
 
-.header__secondLineShoppingCartQuantity_active {
+.header__secondLineShoppingCartQuantity {
   display: flex;
   border-radius: 100px;
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 15px;
   height: 15px;
+  top: -5px;
+  right: -5px;
+  align-items: center;
+  justify-content: center;
 
-  background-color: #CA3192;
-}
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
 
-.header__secondLineShoppingCartQuantity_disable {
-  display: none;
+  color: var(--colorWhite);
+
+  background-color: var(--colorPink);
 }
 
 .header__secondLineLink {
@@ -197,20 +250,30 @@ export default {};
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  line-height: 19px;
 
-  color: #4e3535;
+  color: var(--colorBrown);
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .header__secondLineSearch {
   margin: 30px 80px 30px 0;
 }
 
+.header__secondLineLike {
+  text-decoration: none;
+}
+
 .header__secondLineLikeSvg {
   margin: 31px 29px 31px 0;
 }
 
-.header__secondLineLink_last {
-  margin: 0;
+.header__secondLineShoppingCart {
+  text-decoration: none;
+  margin: 0 58px 0 0;
 }
 
 .header__secondLineShoppingCartSvg {
@@ -218,5 +281,17 @@ export default {};
   position: relative;
 }
 
+.header__secondLineMenuText {
+  text-decoration: none;
+  width: 45px;
+  margin: 0 16px 0 0;
 
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: var(--colorPink);
+}
 </style>

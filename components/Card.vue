@@ -24,23 +24,23 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .card {
   display: flex;
   align-items: center;
   height: 900px;
 
-  background: #f6f6f6;
+  background: var(--colorDarkerWhite);
 }
 
 .card__wrapper {
   display: flex;
   align-items: center;
   height: 900px;
-}
 
-.card__wrapper:nth-child(even) {
-  flex-direction: row-reverse;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
 
 .card__imageWrapper {
@@ -65,8 +65,9 @@ export default {
   font-style: normal;
   font-weight: 500;
   font-size: 46px;
+  line-height: 60px;
 
-  color: #843c6a;
+  color: var(--colorDullMagenta);
 }
 
 .card__description {
@@ -76,14 +77,15 @@ export default {
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
+  line-height: 27px;
 
-  color: #4e3535;
+  color: var(--colorBrown);
 }
 
 .link {
-  color: #ca3192;
+  color: var(--colorPink);
   text-decoration: underline;
-  text-decoration-color: #ca3192;
+  text-decoration-color: var(--colorPink);
 }
 
 p {

@@ -108,7 +108,7 @@
             </div>
           </div>
         </div>
-        <div class="footer__firstBlockColumn_last">
+        <div class="footer__firstBlockColumn">
           <div class="footer__firstBlockColumnTitle">Контакты</div>
           <div class="footer__firstBlockColumnContacts">
             <div class="footer__firstBlockColumnContactItem">
@@ -221,7 +221,8 @@ export default {
 
 .footer__firstBlock {
   display: flex;
-  margin: 0 260px 81px 260px;
+  margin: 0 auto 81px auto;
+  width: fit-content;
 }
 
 .footer__firstBlockColumn {
@@ -237,6 +238,10 @@ export default {
     .footer__firstBlockColumnDescription {
       margin: 0 0 26px 0;
     }
+  }
+
+  &:last-child {
+    margin: 0;
   }
 }
 
@@ -332,7 +337,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  margin: 0 auto;
+  width: 100%;
 
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
   transform: matrix(-1, 0, 0, 1, 0, 0);

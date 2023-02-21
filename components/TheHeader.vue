@@ -96,6 +96,8 @@ export default {
 <style lang="scss">
 .header__firstLine {
   height: 40px;
+  margin: 0 auto;
+  width: 100%;
 
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
   transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -104,7 +106,8 @@ export default {
 .header__firstLineWrapper {
   display: flex;
   flex-direction: row;
-  margin: 0 260px 0 260px;
+  width: fit-content;
+  margin: 0 auto;
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
@@ -196,7 +199,8 @@ export default {
 .header__secondLineWrapper {
   display: flex;
   align-items: center;
-  margin: 0 260px 0 250px;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .header__secondLineLogo {

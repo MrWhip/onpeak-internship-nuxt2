@@ -3,9 +3,12 @@
     <div class="header">
       <div class="header__firstLine">
         <div class="header__firstLineWrapper">
-          <div class="header__firstLineText">
+          <div class="header__firstLineText header__firstLineText_desktop">
             Доставка в любой город России всего 700 рублей. По Москве — 500
             рублей.
+          </div>
+          <div class="header__firstLineText header__firstLineText_phone">
+            Доставка по России - 700 ₽, по Москве - 500 ₽
           </div>
           <div class="header__firstLineMailWrapper">
             <div class="header__firstLineMail">
@@ -29,8 +32,11 @@
       </div>
       <div class="header__secondLine">
         <div class="header__secondLineWrapper">
-          <div class="header__secondLineLogo">
-            <img :src="require('@/assets/images/respace-logo.png')" alt="" />
+          <div class="header__secondLineLogo header__secondLineLogo_desktop">
+            <img class="header__secondLineLogoPng header__secondLineLogoPng_desktop" :src="require('@/assets/images/respace-logo.png')" alt="" />
+          </div>
+          <div class="header__secondLineLogo header__secondLineLogo_phone">
+            <img class="header__secondLineLogoPng header__secondLineLogoPng_phone" :src="require('@/assets/images/respace-logo--mini.png')" alt="" />
           </div>
           <div class="header__secondLineLinksWrapper">
             <div class="header__secondLineLink">Обои</div>
@@ -123,6 +129,14 @@ export default {
   line-height: 15px;
 
   color: var(--colorWhite);
+
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
+  }
 }
 
 .header__firstLineMailWrapper {
@@ -205,6 +219,14 @@ export default {
 
 .header__secondLineLogo {
   margin: 18px 148px 18px 0;
+
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
+  }
 }
 
 .header__secondLineLinksWrapper {
@@ -297,5 +319,137 @@ export default {
   line-height: 19px;
 
   color: var(--colorPink);
+}
+
+@media (max-width: 1919px) {
+
+}
+
+@media (max-width: 1365px) {
+
+}
+
+@media (max-width: 767px) {
+  .header {
+    width: 320px; 
+    margin: 0 auto;
+  }
+
+  .header__firstLineWrapper {
+    width: 320px;
+  }
+
+  .header__firstLine {
+    width: auto;
+    height: 24px;
+  }
+
+  .header__firstLineText {
+    display: grid;
+    margin: 5px 34px 5px 25px;
+    width: 261px;
+    height: 14px;
+    left: 25px;
+    top: 5px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #ffffff;
+
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+    }
+  }
+
+  .header__firstLineMailSvg {
+    display: none;
+  }
+
+  .header__firstLineMailText {
+    display: none;
+  }
+
+  .header__firstLinePhoneSvg {
+    display: none;
+  }
+
+  .header__firstLinePhoneNumber {
+    display: none;
+  }
+
+  .header__secondLineWrapper {
+    width: 320px;
+  }
+
+  .header__secondLineLogo {
+    margin: 19px 52px 19px 25px;
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+    }
+  }
+
+  .header__secondLineLogoPng {
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+    }
+  }
+
+  .header__secondLineLinksWrapper {
+    display: none;
+  }
+
+  .header__secondLineLink {
+    display: none;
+  }
+
+  .header__secondLineSearch {
+    display: none;
+  }
+
+  .header__secondLineDividingLine {
+    display: none;
+  }
+
+  .header__secondLineMenuText {
+    display: none;
+  }
+
+  .header__secondLineLike {
+    margin: 23px 24px 22px 0;
+  }
+
+  .header__secondLineLikeSvg {
+    margin: 0;
+  }
+
+  .header__secondLineShoppingCart {
+    margin: 22px 26px 21px 0;
+  }
+
+  .header__secondLineShoppingCartSvg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .header__secondLineShoppingCartQuantity {
+    width: 15px;
+    height: 15px;
+  }
 }
 </style>

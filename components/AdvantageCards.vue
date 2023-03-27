@@ -1,5 +1,6 @@
 <template>
   <div class="advantageCard__wrapper">
+    <div class="header__secondLineDividingLine"></div>
     <div class="advantageCard__titleWrapper">
       <img
         class="advantageCard__image"
@@ -9,8 +10,9 @@
       <div class="advantageCard__title">{{ title }}</div>
     </div>
     <div class="advantageCard__textWrapper">
-      <div class="advantageCard__description" v-html="description"></div>
+      <div class="advantageCard__description" v-if="show" v-html="description"></div>
     </div>
+    <div class="advantageCards__titleDividingLine"></div>
   </div>
 </template>
 
@@ -20,6 +22,12 @@ export default {
     image: String,
     title: String,
     description: String,
+  },
+
+  data() {
+    return {
+      show: false,
+    };
   },
 };
 </script>
@@ -32,7 +40,7 @@ export default {
 }
 
 .advantageCard__image {
-    margin: 0 26px 0 0;
+  margin: 0 26px 0 0;
 }
 
 .advantageCard__title {
@@ -59,5 +67,46 @@ export default {
   line-height: 27px;
 
   color: var(--colorBrown);
+}
+
+@media (max-width: 767px) {
+  .advantageCard {
+    width: 320px;
+    margin: 0 auto 0 auto;
+  }
+
+  .advantageCard__titleWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .advantageCard__textWrapper {
+    width: 320px;
+    margin: 0 auto 0 auto;
+  }
+
+  .advantageCard__image {
+    width: 30.66px;
+    height: 30px;
+    margin: 10px 11px 10px 26px;
+  }
+
+  .advantageCard__title {
+    width: 202px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .advantageCard__description {
+    width: 267px;
+    margin: 10px auto 16px auto;
+
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 22px;
+  }
 }
 </style>

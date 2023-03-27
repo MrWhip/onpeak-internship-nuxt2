@@ -364,4 +364,18 @@ export default {
 
   color: var(--colorBrown);
 }
+
+@media (max-width: 767px) {
+  .footer__firstBlockColumn {
+    display: none;
+  }
+
+  .footer__firstBlockColumn:nth-child(5) {
+    display: block;
+  }
+
+  .footer__firstBlockColumn:nth-child(6) {
+    display: block;
+  }
+}
 </style>

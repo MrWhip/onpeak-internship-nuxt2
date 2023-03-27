@@ -1,10 +1,17 @@
 <template>
   <div class="card__wrapper">
-    <div class="card__imageWrapper">
+    <div class="card__imageWrapper card__imageWrapper_desktop">
       <img
         class="card__image"
         :src="require(`@/assets/images${image}`)"
         v-if="image"
+      />
+    </div>
+    <div class="card__imageWrapper card__imageWrapper_phone">
+      <img
+        class="card__image"
+        :src="require(`@/assets/images${imagePhone}`)"
+        v-if="imagePhone"
       />
     </div>
     <div class="card__textWrapper">
@@ -18,8 +25,15 @@
 export default {
   props: {
     image: String,
+    imagePhone: String,
     title: String,
     description: String,
+  },
+
+  data() {
+    return {
+      show: false,
+    };
   },
 };
 </script>
@@ -28,7 +42,7 @@ export default {
 .card {
   display: flex;
   align-items: center;
-  height: 900px;
+  height: auto;
 
   background: var(--colorDarkerWhite);
 }
@@ -36,7 +50,7 @@ export default {
 .card__wrapper {
   display: flex;
   align-items: center;
-  height: 900px;
+  height: auto;
 
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -45,6 +59,14 @@ export default {
 
 .card__imageWrapper {
   height: 900px;
+
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
+  }
 }
 
 .card__image {
@@ -55,6 +77,7 @@ export default {
 .card__textWrapper {
   width: 899px;
   margin: 0 0 0 61px;
+  height: auto;
 }
 
 .card__title {
@@ -88,7 +111,75 @@ export default {
   text-decoration-color: var(--colorPink);
 }
 
+.card__textDescriptionButton {
+  display: none;
+}
+
 p {
   margin: 0 0 18px 0;
+}
+
+@media (max-width: 767px) {
+  .card__wrapper {
+    display: block;
+    width: 320px;
+  }
+
+  .card__imageWrapper {
+    height: 300px;
+
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+      margin: 0 auto 29px auto;
+    }
+  }
+
+  .card__textWrapper {
+    width: 277px;
+    height: auto;
+    margin: 0 auto 61px auto;
+  }
+
+  .card__textDescriptionButton {
+    display: block;
+  }
+
+  .card__image {
+    width: 320px;
+    height: 300px;
+  }
+
+  .card__title {
+    width: 270px;
+    margin: 0 auto 23px auto;
+
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .card__description {
+    width: 278px;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .card__textDescriptionButton {
+    width: 73px;
+
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 27px;
+
+    color: var(--colorPink);
+  }
 }
 </style>

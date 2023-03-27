@@ -1,33 +1,53 @@
 <template>
   <div class="ceramicTiles__wrapper">
     <div class="ceramicTiles__textWrapper">
-      <div class="ceramicTiles__Title">Керамическая плитка</div>
-      <div class="ceramicTiles__Description">
-        <div class="ceramicTiles__DescriptionText">
+      <div class="ceramicTiles__image ceramicTiles__image_phone">
+        <img
+          class="ceramicTiles__imageSvg"
+          :src="require('@/assets/images/ceramic-phone.png')"
+        />
+      </div>
+      <div class="ceramicTiles__title">Керамическая плитка</div>
+      <div class="ceramicTiles__description">
+        <div class="ceramicTiles__descriptionText">
           Дизайнерская керамическая плитка – нестандартное, яркое решение,
           которое часто можно применить только в уникальных, идеальных по
           соблюдению стилистики помещениях. Такие коллекции часто выпускаются
           ограниченной серией или становятся единственными в своем роде.
         </div>
-        <div class="ceramicTiles__DescriptionText">
+        <div class="ceramicTiles__descriptionText" v-if="show">
           Керамическая плитка в интерьере выглядит достаточно стильно,
           оригинально, так как имеет матовую или глянцевую поверхность, а также
           разнообразную текстуру, орнамент и рисунок. Этот материал используется
           для отделки стен, потолков, кухонных фартуков и широко применяется в
           дизайне гостиной и ванной комнаты.
         </div>
+        <div
+          class="ceramicTiles__descriptionTextButton"
+          v-if="!show"
+          @click="show = !show"
+        >
+          развернуть...
+        </div>
+        <div
+          class="ceramicTiles__descriptionTextButton"
+          v-if="show"
+          @click="show = !show"
+        >
+          свернуть
+        </div>
       </div>
-      <a href="#" class="ceramicTiles__Link">
-        <div class="ceramicTiles__LinkDescription">Смотреть всю плитку</div>
-        <div class="ceramicTiles__LinkImage">
+      <a href="#" class="ceramicTiles__link">
+        <div class="ceramicTiles__linkDescription">Смотреть всю плитку</div>
+        <div class="ceramicTiles__linkImage">
           <img
-            class="ceramicTiles__LinkSvg"
+            class="ceramicTiles__linkSvg"
             :src="require('@/assets/sprite/svg/arrow_right.svg')"
           />
         </div>
       </a>
     </div>
-    <div class="ceramicTiles__image">
+    <div class="ceramicTiles__image ceramicTiles__image_desktop">
       <img
         class="ceramicTiles__imageSvg"
         :src="require('@/assets/images/ceramic.png')"
@@ -37,7 +57,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -47,11 +73,17 @@ export default {};
   width: 1400px;
 }
 
+.ceramicTiles__image {
+  &_phone {
+    display: none;
+  }
+}
+
 .ceramicTiles__textWrapper {
   margin: 0 70px 0 0;
 }
 
-.ceramicTiles__Title {
+.ceramicTiles__title {
   width: 600px;
   margin: 0 0 32px 0;
 
@@ -64,11 +96,11 @@ export default {};
   color: var(--colorDullMagenta);
 }
 
-.ceramicTiles__Description:last-of-type {
+.ceramicTiles__description:last-of-type {
   margin: 0 0 55px 0;
 }
 
-.ceramicTiles__DescriptionText {
+.ceramicTiles__descriptionText {
   width: 649px;
   margin: 0 0 27px 0;
 
@@ -81,18 +113,19 @@ export default {};
   color: var(--colorBrown);
 }
 
-.ceramicTiles__Link {
+.ceramicTiles__link {
   display: flex;
   width: 200px;
   align-content: center;
   text-decoration: none;
 }
 
-.ceramicTiles__LinkSvg {
-  filter: invert(33%) sepia(51%) saturate(3113%) hue-rotate(300deg) brightness(82%) contrast(92%);
+.ceramicTiles__linkSvg {
+  filter: invert(33%) sepia(51%) saturate(3113%) hue-rotate(300deg)
+    brightness(82%) contrast(92%);
 }
 
-.ceramicTiles__LinkDescription {
+.ceramicTiles__linkDescription {
   width: 190px;
 
   font-family: "Ubuntu";
@@ -102,5 +135,69 @@ export default {};
   line-height: 16px;
 
   color: var(--colorPink);
+}
+
+@media (max-width: 1919px) {
+}
+
+@media (max-width: 1365px) {
+}
+
+@media (max-width: 767px) {
+  .ceramicTiles__wrapper {
+    width: 320px;
+    display: flex;
+    margin: 0 auto 0 auto;
+    justify-content: center;
+  }
+
+  .ceramicTiles__textWrapper {
+    margin: 0 auto 0 auto;
+  }
+
+  .ceramicTiles__image {
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+      margin: 0 auto 35px auto;
+    }
+  }
+
+  .ceramicTiles__link {
+    display: none;
+  }
+
+  .ceramicTiles__title {
+    width: 267px;
+    margin: 0 auto 28px auto;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .ceramicTiles__descriptionText {
+    width: 267px;
+    margin: 0 auto 16px auto;
+  
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .ceramicTiles__descriptionTextButton {
+    width: 267px;
+    margin: 0 auto 54px auto;
+
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 27px;
+
+    color: var(--colorPink);
+  }
 }
 </style>

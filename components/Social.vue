@@ -1,13 +1,26 @@
 <template>
   <div class="social__wrapper">
-    <div class="social__image">
+    <div class="social__image social__image_desktop">
       <img
-        class="social__imageSvg"
+        class="social__imageSvg social__imageSvg_desktop"
         :src="require('@/assets/sprite/svg/instagram.svg')"
       />
     </div>
     <div class="social__text">
-      <div class="social__textTitle">Респейс в Instagram</div>
+      <div class="social__header">
+        <div class="social__image social__image_phone">
+          <img
+            class="social__imageSvg social__imageSvg_phone"
+            :src="require('@/assets/sprite/svg/instagram.svg')"
+          />
+        </div>
+        <div class="social__textTitle social__textTitle_phone">
+          Респейс в Instagram
+        </div>
+      </div>
+      <div class="social__textTitle social__textTitle_desktop">
+        Респейс в Instagram
+      </div>
       <div class="social__textDescription">
         Подписывайтесь на наш Instagram, следите за новостями, мы публикуем
         много всего интересного! Все подписчики получают промо-код на скидку 5%!
@@ -26,6 +39,10 @@ export default {};
   display: flex;
   width: 1400px;
   margin: 0 260px 144px 260px;
+}
+
+.social__header {
+  display: none;
 }
 
 .social__text {
@@ -62,7 +79,7 @@ export default {};
 }
 
 .social__button {
-    width: 457px;
+  width: 457px;
   height: 80px;
   display: flex;
   align-items: center;
@@ -79,10 +96,90 @@ export default {};
   color: var(--colorWhite);
   margin: 105px 0 0 0;
 
-
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
-  backdrop-filter: blur(7.5px);
+  //backdrop-filter: blur(7.5px);
 
   border-radius: 10px;
+}
+
+@media (max-width: 1919px) {
+
+}
+
+@media (max-width: 1365px) {
+}
+
+@media (max-width: 767px) {
+  .social__wrapper {
+    width: 320px;
+    display: grid;
+    justify-content: space-around;
+    justify-items: center;
+    margin: 0 auto 79px auto;
+    background: #f6f6f6;
+    //backdrop-filter: blur(4px);
+  }
+
+  .social__header {
+    display: flex;
+  }
+
+  .social__text {
+    width: 270px;
+  }
+
+  .social__textDescription {
+    width: 271px;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+
+    margin: 0 auto 31px auto;
+  }
+
+  .social__textTitle {
+    width: 185px;
+
+    font-weight: 500;
+    font-size: 29px;
+    line-height: 33px;
+
+    &_desktop {
+      display: none;
+    }
+  }
+
+  .social__button {
+    width: 97px;
+    height: 18px; 
+
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social__imageSvg {
+    width: 64px;
+    height: 64px;
+  }
+
+  .social__image {
+    &_desktop {
+      display: none;
+    }
+  }
+
+  .social__button {
+    width: 270px;
+    height: 56px;
+
+    margin: 0 auto 54px auto;
+  }
 }
 </style>

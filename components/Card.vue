@@ -120,6 +120,9 @@ p {
 }
 
 @media (max-width: 767px) {
+  .card {
+    background: none;
+  }
   .card__wrapper {
     display: block;
     width: 320px;

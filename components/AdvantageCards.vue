@@ -1,32 +1,20 @@
 <template>
   <div class="advantageCard__wrapper">
-    <div class="header__secondLineDividingLine"></div>
+    <div class="advantageCard__background"></div>
+    <div class="advantageCard__secodlineDivindingLine"></div>
     <div class="advantageCard__titleWrapper">
-      <img
-        class="advantageCard__image"
-        :src="require(`@/assets/images${image}`)"
-        v-if="image"
-      />
+      <img class="advantageCard__image" :src="require(`@/assets/images${image}`)" v-if="image" />
       <div class="advantageCard__title">{{ title }}</div>
       <div class="advantageCard__more" v-if="!show" @click="show = !show">
-        <img
-          class="advantageCard__moreSvg"
-          :src="require(`@/assets/sprite/svg/arrow_down_mini.svg`)"
-        />
+        <img class="advantageCard__moreSvg" :src="require(`@/assets/sprite/svg/arrow_down_mini.svg`)" />
       </div>
       <div class="advantageCard__more" v-if="show" @click="show = !show">
-        <img
-          class="advantageCard__moreSvg"
-          :src="require(`@/assets/sprite/svg/arrow_up_mini.svg`)"
-        />
+        <img class="advantageCard__moreSvg" :src="require(`@/assets/sprite/svg/arrow_up_mini.svg`)" />
       </div>
     </div>
     <div class="advantageCard__textWrapper">
-      <div
-        class="advantageCard__description"
-        v-if="show"
-        v-html="description"
-      ></div>
+      <div class="advantageCard__description advantageCard__description_phone" v-if="show" v-html="description"></div>
+      <div class="advantageCard__description advantageCard__description_desktop" v-html="description"></div>
     </div>
     <div class="advantageCards__titleDividingLine"></div>
   </div>
@@ -59,6 +47,18 @@ export default {
   margin: 0 26px 0 0;
 }
 
+.advantageCard__more {
+  display: none;
+}
+
+.advantageCard__secodlineDivindingLine {
+  display: none;
+}
+
+.advantageCards__titleDividingLine {
+  display: none;
+}
+
 .advantageCard__title {
   width: 298px;
 
@@ -83,6 +83,18 @@ export default {
   line-height: 27px;
 
   color: var(--colorBrown);
+
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
+  }
+}
+
+.advantageCard__background {
+  display: none;
 }
 
 @media (max-width: 767px) {
@@ -91,15 +103,34 @@ export default {
     margin: 0 auto 0 auto;
   }
 
+  .advantageCard__background {
+    display: block;
+
+    background: var(--colorDarkerWhite);
+    backdrop-filter: blur(4px);
+  }
+
   .advantageCard__titleWrapper {
     display: flex;
     align-items: center;
     margin: 0 auto 0 auto;
   }
 
+  .advantageCards__titleDividingLine {
+    display: block;
+  }
+
   .advantageCard__textWrapper {
     width: 320px;
     margin: 0 auto 0 auto;
+
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+    }
   }
 
   .advantageCard__image {
@@ -124,6 +155,22 @@ export default {
     font-weight: 300;
     font-size: 12px;
     line-height: 22px;
+
+    &_phone {
+      display: block;
+    }
+
+    &_desktop {
+      display: none;
+    }
+  }
+
+  .advantageCard__secodlineDivindingLine {
+    display: block;
+  }
+
+  .advantageCard__more {
+    display: block;
   }
 }
 </style>

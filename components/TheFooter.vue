@@ -392,11 +392,11 @@ export default {
   color: var(--colorBrown);
 
   &_desktop {
-    display: none;
+    display: block;
   }
 
   &_phone {
-    display: block;
+    display: none;
   }
 }
 

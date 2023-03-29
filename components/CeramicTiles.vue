@@ -83,6 +83,10 @@ export default {
   margin: 0 70px 0 0;
 }
 
+.ceramicTiles__descriptionTextButton {
+  display: none;
+}
+
 .ceramicTiles__title {
   width: 600px;
   margin: 0 0 32px 0;
@@ -188,6 +192,7 @@ export default {
   }
 
   .ceramicTiles__descriptionTextButton {
+    display: block;
     width: 267px;
     margin: 0 auto 54px auto;
 

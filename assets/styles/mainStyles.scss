@@ -25,7 +25,8 @@
         url(/fonts/Ubuntu-Regular.ttf);
 }
 
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -58,9 +59,6 @@ footer {
 
 .advantageCards__wrapper {
     width: 1400px;
-
-    background: var(--colorDarkerWhite);
-    //backdrop-filter: blur(4px);
 }
 
 .advantageCards {
@@ -89,6 +87,10 @@ footer {
     }
 }
 
+.advantageCards__wrapper {
+    margin: 0 auto;
+}
+
 .advantageCards__title {
     width: 810px;
     margin: 0 0 71px 0;
@@ -110,6 +112,10 @@ footer {
     margin: 0 auto;
 }
 
+.advantageCards__background {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .cards {
         margin: 0 auto 88px auto;
@@ -128,9 +134,32 @@ footer {
         margin: 0 auto 85px auto;
     }
 
+    .advantageCard {
+        &:nth-last-of-type(1) {
+            .advantageCard__wrapper {
+                &:nth-last-child(1) {
+                    margin-bottom: 73px;
+                }
+            }
+        }
+    }
+
     .advantageCards__wrapper {
+        position: relative;
         width: 320px;
         margin: 0 auto 85px auto;
+    }
+
+    .advantageCards__background {
+        position: absolute;
+        z-index: -1;
+        display: block;
+
+        width: 320px;
+        height: 100%;
+
+        background: var(--colorDarkerWhite);
+        backdrop-filter: blur(4px);
     }
 
     .advantageCards__title {

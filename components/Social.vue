@@ -1,18 +1,13 @@
 <template>
   <div class="social__wrapper">
+    <div class="social__background"></div>
     <div class="social__image social__image_desktop">
-      <img
-        class="social__imageSvg social__imageSvg_desktop"
-        :src="require('@/assets/sprite/svg/instagram.svg')"
-      />
+      <img class="social__imageSvg social__imageSvg_desktop" :src="require('@/assets/sprite/svg/instagram.svg')" />
     </div>
     <div class="social__text">
       <div class="social__header">
         <div class="social__image social__image_phone">
-          <img
-            class="social__imageSvg social__imageSvg_phone"
-            :src="require('@/assets/sprite/svg/instagram.svg')"
-          />
+          <img class="social__imageSvg social__imageSvg_phone" :src="require('@/assets/sprite/svg/instagram.svg')" />
         </div>
         <div class="social__textTitle social__textTitle_phone">
           Респейс в Instagram
@@ -55,7 +50,6 @@ export default {};
 
 .social__textTitle {
   margin: 0 0 36px 0;
-  width: 692px;
 
   font-family: "Ubuntu";
   font-style: normal;
@@ -64,6 +58,10 @@ export default {};
   line-height: 60px;
 
   color: var(--colorDullMagenta);
+}
+
+.social__background {
+  display: none;
 }
 
 .social__textDescription {
@@ -97,31 +95,43 @@ export default {};
   margin: 105px 0 0 0;
 
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
-  //backdrop-filter: blur(7.5px);
 
   border-radius: 10px;
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1919px) {}
 
-}
-
-@media (max-width: 1365px) {
-}
+@media (max-width: 1365px) {}
 
 @media (max-width: 767px) {
   .social__wrapper {
+    position: relative;
     width: 320px;
     display: grid;
     justify-content: space-around;
     justify-items: center;
     margin: 0 auto 79px auto;
-    background: #f6f6f6;
-    //backdrop-filter: blur(4px);
   }
 
   .social__header {
     display: flex;
+
+    margin-top: 57px;
+  }
+
+  .social__background {
+    display: block;
+
+    background: var(--colorDarkerWhite);
+    backdrop-filter: blur(4px);
+
+    position: absolute;
+    z-index: -1;
+
+    width: 320px;
+    height: 100%;
+
+    border-radius: 0px;
   }
 
   .social__text {
@@ -139,8 +149,6 @@ export default {};
   }
 
   .social__textTitle {
-    width: 185px;
-
     font-weight: 500;
     font-size: 29px;
     line-height: 33px;
@@ -152,7 +160,7 @@ export default {};
 
   .social__button {
     width: 97px;
-    height: 18px; 
+    height: 18px;
 
     font-family: "Ubuntu";
     font-style: normal;

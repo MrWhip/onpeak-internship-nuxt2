@@ -25,6 +25,11 @@
         url(/fonts/Ubuntu-Regular.ttf);
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .cards {
     margin: 0 0 163px 0;
 }
@@ -101,6 +106,10 @@ footer {
     display: none;
 }
 
+.container {
+    margin: 0 auto;
+}
+
 @media (max-width: 767px) {
     .cards {
         margin: 0 auto 88px auto;
@@ -121,10 +130,12 @@ footer {
 
     .advantageCards__wrapper {
         width: 320px;
+        margin: 0 auto 85px auto;
     }
 
     .advantageCards__title {
         width: 270px;
+        margin: 40px auto 30px auto;
 
         font-weight: 500;
         font-size: 26px;

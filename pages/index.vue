@@ -1,36 +1,38 @@
 <template>
   <div class="main">
     <TheHeader />
-    <Social />
-    <CeramicTiles />
-    <DesignerWallpaper />
-    <IndividualBlock />
-    <div class="cards">
-      <div class="card" v-for="card in cards" :key="card.title">
-        <Card
-          :image="card.image"
-          :imagePhone="card.imagePhone"
-          :title="card.title"
-          :description="card.description"
-        />
-      </div>
-    </div>
-    <div class="advantageCards__wrapper">
-      <div class="advantageCards__title">
-        Почему стоит купить дизайнерские обои Респейс?
-      </div>
-      <div class="advantageCards__titleDividingLine"></div>
-      <div class="advantageCards">
-        <div
-          class="advantageCard"
-          v-for="advantageCard in advantageCards"
-          :key="advantageCard.title"
-        >
-          <AdvantageCards
-            :image="advantageCard.image"
-            :title="advantageCard.title"
-            :description="advantageCard.description"
+    <div class="container">
+      <Social />
+      <CeramicTiles />
+      <DesignerWallpaper />
+      <IndividualBlock />
+      <div class="cards">
+        <div class="card" v-for="card in cards" :key="card.title">
+          <Card
+            :image="card.image"
+            :imagePhone="card.imagePhone"
+            :title="card.title"
+            :description="card.description"
           />
+        </div>
+      </div>
+      <div class="advantageCards__wrapper">
+        <div class="advantageCards__title">
+          Почему стоит купить дизайнерские обои Респейс?
+        </div>
+        <div class="advantageCards__titleDividingLine"></div>
+        <div class="advantageCards">
+          <div
+            class="advantageCard"
+            v-for="advantageCard in advantageCards"
+            :key="advantageCard.title"
+          >
+            <AdvantageCards
+              :image="advantageCard.image"
+              :title="advantageCard.title"
+              :description="advantageCard.description"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -64,7 +66,7 @@ export default {
           imagePhone: "/cards/card_image_1_phone.png",
           title: "Дизайнерские обои для спальни",
           description:
-            '<p>Существует множество способов того, как поклеить обои в спальне. Совсем не обязательно ограничивать себя вариантом, когда одни и те же обои клеятся на все стены.</p><p v-if="show">Спальня — место вашего отдыха, где ничто не должно вам мешать или беспокоить вас. Чем лучше вы подберете обои для спальни, тем приятней вам будет готовиться ко сну и тем больший заряд бодрости вы будете получать, просыпаясь. Все больше людей, при оформлении спальни, отдают предпочтение обоям на одну, акцентную, стену. Такой подход позволяет, с одной стороны, всегда иметь перед глазами то, что нравится, с другой не перегружает окружающее пространство. Таким образом, вы каждое утро будете видеть то, что вам нравится и получать заряд бодрости.</p><p v-if="show">Еще один способ — это наклеить несколько полос обоев за кроватью — это позволит вам создать отдельную зону внутри своей спальни и наполнить ее новыми красками.</p><p v-if="show">Не бойтесь экспериментировать, кроме того, вы всегда можете обратиться к нашим дизайнерам за бесплатным советом. Будем рады вам помочь!</p><p><div class="card__textDescriptionButton" v-if="!show" @click="show = !show">развернуть...</div><div class="card__textDescriptionButton" v-if="show" @click="show = !show">свернуть</div></p><p>На фотографии - обои «<a class="link" href="#">Поднебесье</a>»</p>',
+            '<p>Существует множество способов того, как поклеить обои в спальне. Совсем не обязательно ограничивать себя вариантом, когда одни и те же обои клеятся на все стены.</p><p {{v-if="show"}}>Спальня — место вашего отдыха, где ничто не должно вам мешать или беспокоить вас. Чем лучше вы подберете обои для спальни, тем приятней вам будет готовиться ко сну и тем больший заряд бодрости вы будете получать, просыпаясь. Все больше людей, при оформлении спальни, отдают предпочтение обоям на одну, акцентную, стену. Такой подход позволяет, с одной стороны, всегда иметь перед глазами то, что нравится, с другой не перегружает окружающее пространство. Таким образом, вы каждое утро будете видеть то, что вам нравится и получать заряд бодрости.</p><p {{v-if="show"}}>Еще один способ — это наклеить несколько полос обоев за кроватью — это позволит вам создать отдельную зону внутри своей спальни и наполнить ее новыми красками.</p><p {{v-if="show"}}>Не бойтесь экспериментировать, кроме того, вы всегда можете обратиться к нашим дизайнерам за бесплатным советом. Будем рады вам помочь!</p><p><div class="card__textDescriptionButton" {{v-if="!show" @click="show = !show"}}>развернуть...</div><div class="card__textDescriptionButton" {{v-if="show" @click="show = !show"}}>свернуть</div></p><p>На фотографии - обои «<a class="link" href="#">Поднебесье</a>»</p>',
         },
         {
           image: "/cards/card_image_2.png",

@@ -105,8 +105,7 @@ export default {
   margin: 0 auto;
   width: 100%;
 
-  background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  background: linear-gradient(90deg, #f08b75 0%, #e94d94 51%, #9b4894 100%);
 }
 
 .header__firstLineWrapper {
@@ -114,7 +113,6 @@ export default {
   flex-direction: row;
   width: fit-content;
   margin: 0 auto;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .header__firstLineText {
@@ -331,7 +329,7 @@ export default {
 
 @media (max-width: 767px) {
   .header {
-    width: 320px; 
+    width: 100%; 
     margin: 0 auto;
   }
 
@@ -358,7 +356,7 @@ export default {
     font-size: 12px;
     line-height: 14px;
 
-    color: #ffffff;
+    color: var(--colorWhite);
 
     &_desktop {
       display: none;

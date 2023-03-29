@@ -1,6 +1,7 @@
 <template>
   <footer>
     <div class="footer">
+      <div class="footer__dividingLine"></div>
       <div class="footer__firstBlock">
         <div class="footer__firstBlockColumn">
           <div class="footer__firstBlockColumnTitle">Обои</div>
@@ -59,16 +60,20 @@
             <div class="footer__firstBlockColumnDescriptionText">Классика</div>
             <div class="footer__firstBlockColumnDescriptionText">Модерн</div>
             <div
-              class="
-                footer__firstBlockColumnDescriptionText
-                footer__firstBlockColumnDescriptionText_beforeTitle
-              "
+              class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_beforeTitle"
             >
               Геометрия
             </div>
           </div>
-          <div class="footer__firstBlockColumnTitle">
+          <div
+            class="footer__firstBlockColumnTitle footer__firstBlockColumnTitle_desktop"
+          >
             Стилистические подборки
+          </div>
+          <div
+            class="footer__firstBlockColumnTitle footer__firstBlockColumnTitle_phone"
+          >
+            Сопутствующие товары
           </div>
           <div class="footer__firstBlockColumnDescription">
             <div class="footer__firstBlockColumnDescriptionText">Кисти</div>
@@ -78,6 +83,7 @@
             </div>
           </div>
         </div>
+        <div class="footer__dividingLine"></div>
         <div class="footer__firstBlockColumn">
           <div class="footer__firstBlockColumnTitle">Компания</div>
           <div class="footer__firstBlockColumnDescription">
@@ -98,16 +104,19 @@
             <div class="footer__firstBlockColumnDescriptionText">Портфолио</div>
             <div class="footer__firstBlockColumnDescriptionText">
               <a
-                class="
-                  footer__firstBlockColumnDescriptionText
-                  footer__firstBlockColumnDescriptionText_link
-                "
+                class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_link"
                 href="#"
                 >Корпоративным клиентам</a
               >
             </div>
+            <div
+              class="footer__firstBlockColumnDescriptionText footer__firstBlockColumnDescriptionText_phone"
+            >
+              Соглашение об использовании сайта
+            </div>
           </div>
         </div>
+        <div class="footer__dividingLine"></div>
         <div class="footer__firstBlockColumn">
           <div class="footer__firstBlockColumnTitle">Контакты</div>
           <div class="footer__firstBlockColumnContacts">
@@ -164,18 +173,25 @@
               />
             </a>
           </div>
-          <div class="footer__firstBlockText">
+          <div class="footer__firstBlockText footer__firstBlockText_desktop">
             Соглашение об использовании сайта
           </div>
-          <div class="footer__firstBlockText">© Respace 2012-2021</div>
+          <div class="footer__firstBlockText footer__firstBlockText_desktop">
+            © Respace 2012-2021
+          </div>
         </div>
       </div>
       <div class="footer__secondBlock">
-        <img
-          class="footer__secondBlockSvg"
-          @click="toTop"
-          :src="require('@/assets/sprite/svg/arrow_up.svg')"
-        />
+        <div class="container">
+          <div class="footer__firstBlockText footer__firstBlockText_phone">
+            © Respace 2012-2021
+          </div>
+          <img
+            class="footer__secondBlockSvg"
+            @click="toTop"
+            :src="require('@/assets/sprite/svg/arrow_up.svg')"
+          />
+        </div>
       </div>
     </div>
   </footer>
@@ -216,6 +232,10 @@ export default {
   &_link {
     color: var(--colorMoreContrastThanDullMagenta);
     text-decoration: none;
+  }
+
+  &_phone {
+    display: none;
   }
 }
 
@@ -259,6 +279,14 @@ export default {
 
   &:last-child {
     margin: 0 0 22px 0;
+  }
+
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
   }
 }
 
@@ -341,7 +369,6 @@ export default {
   width: 100%;
 
   background: linear-gradient(90deg, #9b4894 0%, #e94d94 51%, #f08b75 100%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .footer__secondBlockSvg {
@@ -363,19 +390,149 @@ export default {
   line-height: 24px;
 
   color: var(--colorBrown);
-}
 
-@media (max-width: 767px) {
-  .footer__firstBlockColumn {
+  &_desktop {
     display: none;
   }
 
-  .footer__firstBlockColumn:nth-child(5) {
+  &_phone {
     display: block;
   }
+}
 
-  .footer__firstBlockColumn:nth-child(6) {
+.footer__dividingLine {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .footer__firstBlockColumnDescription {
+    display: none;
+  }
+
+  .footer__firstBlock {
+    width: 320px;
+    flex-direction: column;
+
+    margin: 0 auto 0 auto;
+  }
+
+  .footer__firstBlockColumnTitle {
+    margin: 0 auto 17px 25px;
+
+    width: 47px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+    }
+  }
+
+  .footer__secondBlockSvg {
+    display: none;
+  }
+
+  .footer__firstBlockText {
+    &_desktop {
+      display: none;
+    }
+
+    &_phone {
+      display: block;
+      margin: 28px 0 28px 25px;
+
+      width: 139px;
+
+      line-height: 16px;
+
+      color: var(--colorWhite);
+    }
+  }
+
+  .footer__firstBlockColumnUnderline {
+    display: none;
+  }
+
+  .footer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer__firstBlockColumn {
+    width: 271px;
+    margin: 0;
+
+    &:nth-child(4) {
+      .footer__firstBlockColumnTitle {
+        width: 271px;
+        margin: 0 56px 16px 25px;
+
+        &_phone {
+          margin: 0 56px 33px 25px;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      .footer__firstBlockColumnTitle {
+        display: none;
+      }
+    }
+
+    &:nth-child(6) {
+      .footer__firstBlockColumnTitle {
+        display: none;
+      }
+
+      .footer__firstBlockColumnDescription {
+        display: block;
+
+        margin: 0 auto 26px 25px;
+      }
+    }
+
+    &:nth-child(8) {
+      .footer__firstBlockColumnTitle {
+        display: none;
+      }
+    }
+
+    &:nth-last-child(1) {
+      margin: 0 auto 0 25px;
+    }
+  }
+
+  .footer__firstBlockColumnSocial {
+    width: 271px;
+  }
+
+  .footer__secondBlock {
+    .footer__firstBlockText {
+      width: 320px;
+    }
+  }
+
+  .footer__dividingLine {
     display: block;
+
+    width: 320px;
+    height: 0px;
+    margin: 0 auto 33px auto;
+
+    opacity: 0.15;
+    border: 1px solid var(--colorPink);
+  }
+
+  .footer__firstBlockColumnDescriptionText {
+    &_phone {
+      display: block;
+    }
   }
 }
 </style>

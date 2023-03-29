@@ -8,9 +8,25 @@
         v-if="image"
       />
       <div class="advantageCard__title">{{ title }}</div>
+      <div class="advantageCard__more" v-if="!show" @click="show = !show">
+        <img
+          class="advantageCard__moreSvg"
+          :src="require(`@/assets/sprite/svg/arrow_down_mini.svg`)"
+        />
+      </div>
+      <div class="advantageCard__more" v-if="show" @click="show = !show">
+        <img
+          class="advantageCard__moreSvg"
+          :src="require(`@/assets/sprite/svg/arrow_up_mini.svg`)"
+        />
+      </div>
     </div>
     <div class="advantageCard__textWrapper">
-      <div class="advantageCard__description" v-if="show" v-html="description"></div>
+      <div
+        class="advantageCard__description"
+        v-if="show"
+        v-html="description"
+      ></div>
     </div>
     <div class="advantageCards__titleDividingLine"></div>
   </div>
@@ -94,6 +110,7 @@ export default {
 
   .advantageCard__title {
     width: 202px;
+    margin: 0 18px 0 0;
 
     font-weight: 500;
     font-size: 12px;

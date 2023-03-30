@@ -33,10 +33,18 @@
       <div class="header__secondLine">
         <div class="header__secondLineWrapper">
           <div class="header__secondLineLogo header__secondLineLogo_desktop">
-            <img class="header__secondLineLogoPng header__secondLineLogoPng_desktop" :src="require('@/assets/images/respace-logo.png')" alt="" />
+            <img
+              class="header__secondLineLogoPng header__secondLineLogoPng_desktop"
+              :src="require('@/assets/images/respace-logo.png')"
+              alt=""
+            />
           </div>
           <div class="header__secondLineLogo header__secondLineLogo_phone">
-            <img class="header__secondLineLogoPng header__secondLineLogoPng_phone" :src="require('@/assets/images/respace-logo--mini.png')" alt="" />
+            <img
+              class="header__secondLineLogoPng header__secondLineLogoPng_phone"
+              :src="require('@/assets/images/respace-logo--mini.png')"
+              alt=""
+            />
           </div>
           <div class="header__secondLineLinksWrapper">
             <div class="header__secondLineLink">Обои</div>
@@ -118,7 +126,6 @@ export default {
 .header__firstLineText {
   height: 15px;
   margin: 13px 593px 12px 0;
-  width: 468px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -160,7 +167,6 @@ export default {
 
 .header__firstLineMailText {
   margin: 8px 45px 8px 0;
-  width: 144px;
   height: 24px;
 
   font-family: "Ubuntu";
@@ -194,7 +200,7 @@ export default {
 }
 
 .header__firstLinePhoneNumber {
-  margin: 8px 0 8px 0;
+  margin: 8px 0;
   height: 24px;
   font-family: "Ubuntu";
   font-style: normal;
@@ -229,7 +235,7 @@ export default {
 
 .header__secondLineLinksWrapper {
   width: 574px;
-  margin: 0 133px 0 0;
+  margin-right: 133px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -267,7 +273,7 @@ export default {
 .header__secondLineLink {
   display: flex;
   align-items: center;
-  margin: 0 65px 0 0;
+  margin-right: 65px;
   height: 19px;
 
   font-family: "Roboto";
@@ -297,7 +303,7 @@ export default {
 
 .header__secondLineShoppingCart {
   text-decoration: none;
-  margin: 0 58px 0 0;
+  margin-right: 58px;
 }
 
 .header__secondLineShoppingCartSvg {
@@ -320,14 +326,29 @@ export default {
 }
 
 @media (max-width: 1919px) {
+  .header__firstLineText {
+    margin: 13px 226px 12px 0;
+  }
 
+  .header__secondLineLink {
+    margin-right: 15px;
+  }
+
+  .header__secondLineLogo {
+    margin: 18px 48px 18px 0;
+  }
+
+  .header__secondLineLinksWrapper {
+    width: 400px;
+    margin-right: 33px;
+  }
+
+  .header__secondLineSearch {
+    margin: 30px 65px 30px 0;
+  }
 }
 
-@media (max-width: 1365px) {
-
-}
-
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .header {
     width: 100%; 
     margin: 0 auto;
@@ -350,9 +371,6 @@ export default {
     left: 25px;
     top: 5px;
 
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 14px;
 
@@ -389,6 +407,7 @@ export default {
 
   .header__secondLineLogo {
     margin: 19px 52px 19px 25px;
+
     &_desktop {
       display: none;
     }

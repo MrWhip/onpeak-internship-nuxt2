@@ -75,8 +75,7 @@ export default {
 }
 
 .card__textWrapper {
-  width: 899px;
-  margin: 0 0 0 61px;
+  margin-left: 61px;
   height: auto;
 }
 
@@ -119,10 +118,49 @@ p {
   margin: 0 0 18px 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1919px) {
+  .card__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1024px;
+  }
+
+  .card__title {
+    width: auto;
+    margin: 0 auto 16px 0;
+
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+
+  .card__image {
+    width: 512px;
+    height: auto;
+  }
+
+  .card__imageWrapper {
+    height: 480px;
+  }
+
+  .card__description {
+    width: auto;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  .card__textWrapper {
+    width: 480px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1023px) {
   .card {
     background: none;
   }
+
   .card__wrapper {
     display: block;
     width: 320px;
@@ -176,9 +214,6 @@ p {
   .card__textDescriptionButton {
     width: 73px;
 
-    font-family: "Ubuntu";
-    font-style: normal;
-    font-weight: 300;
     font-size: 12px;
     line-height: 27px;
 

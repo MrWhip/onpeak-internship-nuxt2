@@ -3,18 +3,35 @@
     <div class="advantageCard__background"></div>
     <div class="advantageCard__secodlineDivindingLine"></div>
     <div class="advantageCard__titleWrapper">
-      <img class="advantageCard__image" :src="require(`@/assets/images${image}`)" v-if="image" />
+      <img
+        class="advantageCard__image"
+        :src="require(`@/assets/images${image}`)"
+        v-if="image"
+      />
       <div class="advantageCard__title">{{ title }}</div>
       <div class="advantageCard__more" v-if="!show" @click="show = !show">
-        <img class="advantageCard__moreSvg" :src="require(`@/assets/sprite/svg/arrow_down_mini.svg`)" />
+        <img
+          class="advantageCard__moreSvg"
+          :src="require(`@/assets/sprite/svg/arrow_down_mini.svg`)"
+        />
       </div>
       <div class="advantageCard__more" v-if="show" @click="show = !show">
-        <img class="advantageCard__moreSvg" :src="require(`@/assets/sprite/svg/arrow_up_mini.svg`)" />
+        <img
+          class="advantageCard__moreSvg"
+          :src="require(`@/assets/sprite/svg/arrow_up_mini.svg`)"
+        />
       </div>
     </div>
     <div class="advantageCard__textWrapper">
-      <div class="advantageCard__description advantageCard__description_phone" v-if="show" v-html="description"></div>
-      <div class="advantageCard__description advantageCard__description_desktop" v-html="description"></div>
+      <div
+        class="advantageCard__description advantageCard__description_phone"
+        v-if="show"
+        v-html="description"
+      ></div>
+      <div
+        class="advantageCard__description advantageCard__description_desktop"
+        v-html="description"
+      ></div>
     </div>
     <div class="advantageCards__titleDividingLine"></div>
   </div>
@@ -97,7 +114,17 @@ export default {
   display: none;
 }
 
-@media (max-width: 767px) {
+.advantageCard__description {
+  &_desktop {
+    display: block;
+  }
+
+  &_phone {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
   .advantageCard {
     width: 320px;
     margin: 0 auto 0 auto;

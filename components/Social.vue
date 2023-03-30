@@ -2,12 +2,18 @@
   <div class="social__wrapper">
     <div class="social__background"></div>
     <div class="social__image social__image_desktop">
-      <img class="social__imageSvg social__imageSvg_desktop" :src="require('@/assets/sprite/svg/instagram.svg')" />
+      <img
+        class="social__imageSvg social__imageSvg_desktop"
+        :src="require('@/assets/sprite/svg/instagram.svg')"
+      />
     </div>
     <div class="social__text">
       <div class="social__header">
         <div class="social__image social__image_phone">
-          <img class="social__imageSvg social__imageSvg_phone" :src="require('@/assets/sprite/svg/instagram.svg')" />
+          <img
+            class="social__imageSvg social__imageSvg_phone"
+            :src="require('@/assets/sprite/svg/instagram.svg')"
+          />
         </div>
         <div class="social__textTitle social__textTitle_phone">
           Респейс в Instagram
@@ -33,7 +39,7 @@ export default {};
 .social__wrapper {
   display: flex;
   width: 1400px;
-  margin: 0 260px 144px 260px;
+  margin: 0 auto 144px auto;
 }
 
 .social__header {
@@ -99,11 +105,26 @@ export default {};
   border-radius: 10px;
 }
 
-@media (max-width: 1919px) {}
+@media (max-width: 1919px) {
+  .social__wrapper {
+    width: 1024px;
+    align-items: center;
+  }
+  .social__text {
+    width: auto;
+  }
 
-@media (max-width: 1365px) {}
+  .social__imageSvg {
+    width: 83px;
+    height: 83px;
+  }
 
-@media (max-width: 767px) {
+  .social__button {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1023px) {
   .social__wrapper {
     position: relative;
     width: 320px;

@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="individualBlock__image individualBlock__image_desktop">
-      <img
+      <img class="individualBlock__imagePng"
         :src="require('@/assets/images/individual-block-image.png')"
         alt=""
       />
@@ -84,7 +84,6 @@ export default {
 }
 
 .individualBlock__text {
-  width: 639px;
   margin: 24px 61px 57px 0;
 }
 
@@ -136,7 +135,40 @@ export default {
   color: var(--colorBrown);
 }
 
-@media (max-width: 767px) {
+.individualBlock__textDescriptionButton {
+  display: none;
+}
+
+@media (max-width: 1919px) {
+  .individualBlock__wrapper {
+    width: 1024px;
+    margin: 0 auto 118px auto;
+    align-items: center;
+  }
+
+  .individualBlock__image {
+    width: auto;
+    height: 358px;
+  }
+
+  .individualBlock__imagePng {
+    width: 550px;
+  }
+
+  .individualBlock__text {
+    margin: 24px auto 57px 0;
+  }
+
+  .individualBlock__textTitle {
+    width: auto;
+  }
+
+  .individualBlock__textDescription {
+    width: auto;
+  }
+}
+
+@media (max-width: 1023px) {
   .individualBlock__wrapper {
     display: flex;
     width: 320px;

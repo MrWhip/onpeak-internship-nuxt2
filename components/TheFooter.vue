@@ -404,7 +404,31 @@ export default {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1919px) {
+  .footer__firstBlock {
+    width: 1024px;
+    justify-content: space-between;
+  }
+
+  .footer__firstBlockColumn {
+    width: auto;
+  }
+
+  .footer__firstBlockColumnTitle {
+    width: auto;
+  }
+
+  .footer__firstBlockColumn {
+    &:nth-child(4) {
+      .footer__firstBlockColumnTitle {
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
   .footer__firstBlockColumnDescription {
     display: none;
   }

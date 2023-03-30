@@ -69,7 +69,7 @@ export default {
 <style lang="scss">
 .ceramicTiles__wrapper {
   display: flex;
-  margin: 0 260px 73px 260px;
+  margin: 0 auto 73px auto;
   width: 1400px;
 }
 
@@ -80,7 +80,7 @@ export default {
 }
 
 .ceramicTiles__textWrapper {
-  margin: 0 70px 0 0;
+  margin: 0 60px 0 0;
 }
 
 .ceramicTiles__descriptionTextButton {
@@ -142,17 +142,33 @@ export default {
 }
 
 @media (max-width: 1919px) {
+  .ceramicTiles__wrapper {
+    width: 1024px;
+  }
+
+  .ceramicTiles__title {
+    width: auto;
+  }
+
+  .ceramicTiles__descriptionText {
+    width: auto;
+  }
+
+  .ceramicTiles__imageSvg {
+    width: 600px;
+  }
 }
 
-@media (max-width: 1365px) {
-}
-
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .ceramicTiles__wrapper {
     width: 320px;
     display: flex;
     margin: 0 auto 0 auto;
     justify-content: center;
+  }
+
+  .ceramicTiles__imageSvg {
+    width: 320px;
   }
 
   .ceramicTiles__textWrapper {

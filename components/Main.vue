@@ -23,9 +23,9 @@
         enter-active-class="animated slide-in-active"
         leave-active-class="animated slide-out-active"
       >
-        <div v-for="index in slides" v-if="index == active" :key="index">
+        <!-- <div v-for="index in slides" v-if="index == active" :key="index"> 
           Slide {{ index }}
-        </div>
+        </div>-->
       </transition-group>
     </div>
     <span class="prev" @click="move(-1)">
@@ -35,11 +35,11 @@
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </span>
     <ul class="dots">
-      <li
+      <!-- <li
         v-for="(dot, index) in slides"
         :class="{ active: ++index === active }"
         @click="jump(index)"
-      ></li>
+      ></li> -->
     </ul>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   el: '#app',
   data: {
     slides: 4,
-    active: 1
+    active: 1,
   },
   methods: {
     move(amount) {

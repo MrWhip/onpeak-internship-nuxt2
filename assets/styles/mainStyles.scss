@@ -28,7 +28,7 @@
 html,
 body {
     max-width: 100%;
-    //overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .cards {
@@ -92,8 +92,7 @@ footer {
 }
 
 .advantageCards__title {
-    width: 810px;
-    margin: 0 0 71px 0;
+    margin-bottom: 71px;
 
     font-family: 'Ubuntu';
     font-style: normal;
@@ -120,6 +119,35 @@ footer {
     .cards {
         width: 1024px;
         margin: 0 auto 163px auto;
+    }
+
+    .advantageCard {
+        width: 311px;
+        margin: 0 30px 45px 0;
+    }
+
+    .advantageCards {
+        justify-content: center;
+    }
+
+    .advantageCards__wrapper {
+        width: 1024px;
+    }
+
+    .advantageCard:nth-of-type(3n) {
+        margin: 0 10px 45px 0;
+    }
+
+    .advantageCard:nth-of-type(7) {
+        margin: 0 30px 162px 0;
+    }
+
+    .advantageCard:nth-of-type(8) {
+        margin: 0 30px 162px 0;
+    }
+
+    .advantageCards__title {
+        padding-left: 10px;
     }
 }
 

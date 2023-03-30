@@ -109,6 +109,7 @@ export default {};
   .social__wrapper {
     width: 1024px;
     align-items: center;
+    justify-content: center;
   }
   .social__text {
     width: auto;
@@ -121,6 +122,7 @@ export default {};
 
   .social__button {
     margin: 0;
+    width: 300px;
   }
 }
 

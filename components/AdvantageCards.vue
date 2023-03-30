@@ -57,11 +57,11 @@ export default {
 .advantageCard__titleWrapper {
   display: flex;
   align-items: flex-end;
-  margin: 0 0 16px 0;
+  margin-bottom: 16px;
 }
 
 .advantageCard__image {
-  margin: 0 26px 0 0;
+  margin-right: 26px;
 }
 
 .advantageCard__more {
@@ -121,6 +121,28 @@ export default {
 
   &_phone {
     display: none;
+  }
+}
+
+@media (max-width: 1919px) {
+  .advantageCard__image {
+      margin-right: 6px;
+  }
+
+  .advantageCard__wrapper {
+    width: 311px;
+  }
+
+  .advantageCard__textWrapper {
+    width: 311px;
+  }
+
+  .advantageCard__title {
+    width: auto;
+
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 28px;
   }
 }
 

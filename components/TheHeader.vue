@@ -327,7 +327,7 @@ export default {
 
 @media (max-width: 1919px) {
   .header__firstLineText {
-    margin: 13px 226px 12px 0;
+    margin: 13px 100px 13px 0;
   }
 
   .header__secondLineLink {
@@ -335,7 +335,7 @@ export default {
   }
 
   .header__secondLineLogo {
-    margin: 18px 48px 18px 0;
+    margin: 18px 10px 18px 0;
   }
 
   .header__secondLineLinksWrapper {
@@ -344,7 +344,11 @@ export default {
   }
 
   .header__secondLineSearch {
-    margin: 30px 65px 30px 0;
+    margin: 30px 30px 30px 0;
+  }
+
+  .header__secondLineShoppingCart {
+    margin-right: 30px;
   }
 }
 

@@ -407,7 +407,7 @@ export default {
 @media (max-width: 1919px) {
   .footer__firstBlock {
     width: 1024px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .footer__firstBlockColumn {

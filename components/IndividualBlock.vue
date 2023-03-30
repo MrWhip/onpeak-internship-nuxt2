@@ -141,9 +141,10 @@ export default {
 
 @media (max-width: 1919px) {
   .individualBlock__wrapper {
-    width: 1024px;
+    width: 1000px;
     margin: 0 auto 118px auto;
     align-items: center;
+    padding: 0 12px 0 12px;
   }
 
   .individualBlock__image {

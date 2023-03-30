@@ -210,13 +210,19 @@ export default {
   }
 
   .designerWallpaper__text {
-    margin: 0 auto;
+    padding: 0 16.75px;
+    margin: 0;
   }
 
   .designerWallpaper__video {
     width: 500px;
     height: 282px;
     border-radius: 0px 30px;
+  }
+
+  .designerWallpaper__videoWrapper {
+    padding: 0;
+    margin: 0;
   }
 
   .designerWallpaper__videoButtonSvg {

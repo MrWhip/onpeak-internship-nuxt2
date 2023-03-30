@@ -2,10 +2,7 @@
   <div class="ceramicTiles__wrapper">
     <div class="ceramicTiles__textWrapper">
       <div class="ceramicTiles__image ceramicTiles__image_phone">
-        <img
-          class="ceramicTiles__imageSvg"
-          :src="require('@/assets/images/ceramic-phone.png')"
-        />
+        <img class="ceramicTiles__imageSvg" :src="require('@/assets/images/ceramic-phone.png')" />
       </div>
       <div class="ceramicTiles__title">Керамическая плитка</div>
       <div class="ceramicTiles__description">
@@ -22,36 +19,22 @@
           для отделки стен, потолков, кухонных фартуков и широко применяется в
           дизайне гостиной и ванной комнаты.
         </div>
-        <div
-          class="ceramicTiles__descriptionTextButton"
-          v-if="!show"
-          @click="show = !show"
-        >
+        <div class="ceramicTiles__descriptionTextButton" v-if="!show" @click="show = !show">
           развернуть...
         </div>
-        <div
-          class="ceramicTiles__descriptionTextButton"
-          v-if="show"
-          @click="show = !show"
-        >
+        <div class="ceramicTiles__descriptionTextButton" v-if="show" @click="show = !show">
           свернуть
         </div>
       </div>
       <a href="#" class="ceramicTiles__link">
         <div class="ceramicTiles__linkDescription">Смотреть всю плитку</div>
         <div class="ceramicTiles__linkImage">
-          <img
-            class="ceramicTiles__linkSvg"
-            :src="require('@/assets/sprite/svg/arrow_right.svg')"
-          />
+          <img class="ceramicTiles__linkSvg" :src="require('@/assets/sprite/svg/arrow_right.svg')" />
         </div>
       </a>
     </div>
     <div class="ceramicTiles__image ceramicTiles__image_desktop">
-      <img
-        class="ceramicTiles__imageSvg"
-        :src="require('@/assets/images/ceramic.png')"
-      />
+      <img class="ceramicTiles__imageSvg" :src="require('@/assets/images/ceramic.png')" />
     </div>
   </div>
 </template>
@@ -80,7 +63,7 @@ export default {
 }
 
 .ceramicTiles__textWrapper {
-  margin: 0 60px 0 0;
+  margin-right: 60px;
 }
 
 .ceramicTiles__descriptionTextButton {
@@ -89,7 +72,7 @@ export default {
 
 .ceramicTiles__title {
   width: 600px;
-  margin: 0 0 32px 0;
+  margin-bottom: 32px;
 
   font-family: "Ubuntu";
   font-style: normal;
@@ -101,12 +84,12 @@ export default {
 }
 
 .ceramicTiles__description:last-of-type {
-  margin: 0 0 55px 0;
+  margin-bottom: 55px;
 }
 
 .ceramicTiles__descriptionText {
   width: 649px;
-  margin: 0 0 27px 0;
+  margin-bottom: 27px;
 
   font-family: "Ubuntu";
   font-style: normal;
@@ -125,8 +108,7 @@ export default {
 }
 
 .ceramicTiles__linkSvg {
-  filter: invert(33%) sepia(51%) saturate(3113%) hue-rotate(300deg)
-    brightness(82%) contrast(92%);
+  filter: invert(33%) sepia(51%) saturate(3113%) hue-rotate(300deg) brightness(82%) contrast(92%);
 }
 
 .ceramicTiles__linkDescription {
@@ -155,7 +137,12 @@ export default {
   }
 
   .ceramicTiles__imageSvg {
-    width: 600px;
+    width: 550px;
+  }
+
+  .ceramicTiles__textWrapper {
+    padding: 0 20px;
+    margin-right: 0;
   }
 }
 
@@ -201,7 +188,7 @@ export default {
   .ceramicTiles__descriptionText {
     width: 267px;
     margin: 0 auto 16px auto;
-  
+
     font-weight: 300;
     font-size: 16px;
     line-height: 27px;
